@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Área Privada | Acesso Reservado</title>
+    <meta
+      name="description"
+      content="Responda algumas perguntas e escolha como deseja continuar: prévias grátis ou acesso completo."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="top-notice">
+      <div class="top-notice__inner">
+        <span class="dot"></span>
+        <span>Conteúdo reservado para maiores de 18 anos</span>
+      </div>
+    </div>
+
+    <main class="app">
+      <section class="hero-card" id="heroCard">
+        <div class="hero-card__glow"></div>
+
+        <div class="hero-header">
+          <div class="badge">ACESSO PRIVADO</div>
+          <div class="hero-timer" id="heroTimer">Oferta expira em 05:00</div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-label-row">
+            <span>Progresso</span>
+            <span id="progressText">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <section class="screen active" id="screenIntro">
+          <p class="overline">ÁREA RESERVADA</p>
+          <h1>Descubra qual acesso combina mais com você</h1>
+          <p class="lead">
+            Responda algumas perguntas rápidas e escolha como deseja continuar.
+          </p>
+
+          <div class="intro-points">
+            <div class="point">Entrada discreta</div>
+            <div class="point">Experiência privada</div>
+            <div class="point">Acesso imediato</div>
+          </div>
+
+          <div class="name-box">
+            <label for="userName">Como você quer ser chamado?</label>
+            <input
+              type="text"
+              id="userName"
+              placeholder="Digite seu nome"
+              maxlength="24"
+              autocomplete="name"
+            />
+          </div>
+
+          <button class="btn btn-primary btn-full" id="startBtn">
+            COMEÇAR AGORA
+          </button>
+
+          <p class="mini-text">
+            Ambiente exclusivo e discreto. Continue apenas se for maior de idade.
+          </p>
+        </section>
+
+        <section class="screen" id="screenQuiz">
+          <div class="question-box">
+            <p class="question-step" id="questionStep">Pergunta 1 de 6</p>
+            <h2 id="questionTitle">Pergunta</h2>
+            <p class="question-subtitle" id="questionSubtitle">
+              Escolha a opção que mais combina com você.
+            </p>
+
+            <div class="answers" id="answersContainer"></div>
+
+            <div class="quiz-actions">
+              <button class="btn btn-secondary" id="backBtn" type="button">
+                VOLTAR
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screenLoading">
+          <div class="loading-box">
+            <div class="loader-ring"></div>
+            <p class="loading-title">Analisando seu perfil...</p>
+            <p class="loading-text">
+              Estamos preparando a melhor rota de acesso para você.
+            </p>
+          </div>
+        </section>
+
+        <section class="screen" id="screenResult">
+          <p class="overline">RESULTADO PRONTO</p>
+          <h2 id="resultTitle">Seu perfil combina com uma experiência exclusiva</h2>
+          <p class="lead" id="resultLead">
+            Agora escolha como deseja continuar.
+          </p>
+
+          <div class="result-card">
+            <h3 id="welcomeName">Olá.</h3>
+            <p>
+              Seu perfil indica interesse por uma experiência mais reservada,
+              discreta e com acesso rápido.
+            </p>
+          </div>
+
+          <div class="urgency-box">
+            <div class="urgency-box__left">
+              <span class="urgency-pill">JANELA DE ACESSO</span>
+              <h3>Seu acesso preferencial está disponível agora</h3>
+              <p>
+                Escolha uma das opções abaixo antes do tempo terminar.
+              </p>
+            </div>
+            <div class="urgency-box__right">
+              <span class="countdown-label">Tempo restante</span>
+              <span class="countdown-time" id="resultTimer">05:00</span>
+            </div>
+          </div>
+
+          <div class="choice-grid" id="choiceGrid">
+            <article class="choice-card" id="freeChoiceCard">
+              <span class="choice-tag">GRÁTIS</span>
+              <h3>Ver prévias no Telegram</h3>
+              <p>
+                Entre na área de prévias e conheça uma amostra do conteúdo
+                disponível.
+              </p>
+              <button class="btn btn-secondary btn-full" id="chooseFreeBtn">
+                QUERO VER PRÉVIAS
+              </button>
+            </article>
+          
+            <article class="choice-card choice-card--highlight" id="paidChoiceCard">
+              <span class="choice-tag">PAGO</span>
+              <h3>Liberar acesso completo</h3>
+              <p>
+                Continue para o ambiente de pagamento e desbloqueie o acesso
+                completo.
+              </p>
+              <button class="btn btn-primary btn-full" id="choosePaidBtn">
+                QUERO LIBERAR ACESSO
+              </button>
+            </article>
+          </div>
+
+        <section class="screen" id="screenFree">
+          <p class="overline">PRÉVIAS LIBERADAS</p>
+          <h2 id="freeTitle">Tudo certo, <span id="freeUserName">visitante</span>.</h2>
+          <p class="lead">
+            Toque no botão abaixo para entrar nas prévias gratuitas.
+          </p>
+
+          <div class="action-card">
+            <h3>Canal de prévias</h3>
+            <p>
+              Acesse agora o Telegram e veja uma amostra antes de decidir pelo
+              acesso completo.
+            </p>
+            <a
+              class="btn btn-primary btn-full"
+              href="https://t.me/+JQuC5cq_7r45N2Ex"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ENTRAR NO TELEGRAM
+            </a>
+          </div>
+
+          <button class="btn btn-secondary btn-full" id="backToResultFromFree">
+            VOLTAR
+          </button>
+        </section>
+
+        <section class="screen" id="screenPaid">
+          <p class="overline">ACESSO COMPLETO</p>
+          <h2 id="paidTitle">Seu acesso está pronto, <span id="paidUserName">visitante</span>.</h2>
+          <p class="lead">
+            Toque no botão abaixo para continuar para a plataforma de pagamento.
+          </p>
+
+          <div class="action-card action-card--highlight">
+            <h3>Liberação do acesso</h3>
+            <p>
+              Você será direcionado para a plataforma responsável pelo
+              processamento do pagamento e pela liberação do acesso.
+            </p>
+            <a
+              class="btn btn-primary btn-full"
+              href="https://linkpriv.com/cf32d1cd-dab5-425c-83be-6b6f7c99dd3b"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              IR PARA O PAGAMENTO
+            </a>
+          </div>
+
+          <div class="safe-note">
+            <span class="safe-note__dot"></span>
+            <span>A compra será concluída em ambiente externo e seguro.</span>
+          </div>
+
+          <button class="btn btn-secondary btn-full" id="backToResultFromPaid">
+            VOLTAR
+          </button>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
