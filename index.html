@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <title>Área Privada | Acesso Reservado</title>
     <meta
       name="description"
-      content="Responda algumas perguntas e escolha como deseja continuar: prévias grátis ou acesso completo."
+      content="Responda algumas perguntas rápidas e descubra qual acesso combina mais com você."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,24 +20,22 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="top-notice">
-      <div class="top-notice__inner">
-        <span class="dot"></span>
-        <span>Conteúdo reservado para maiores de 18 anos</span>
-      </div>
+    <div class="topbar">
+      <span class="topbar-dot"></span>
+      <span>Conteúdo reservado para maiores de 18 anos</span>
     </div>
 
-    <main class="app">
-      <section class="hero-card" id="heroCard">
-        <div class="hero-card__glow"></div>
+    <main class="page">
+      <section class="shell">
+        <div class="hero-glow"></div>
 
-        <div class="hero-header">
-          <div class="badge">ACESSO PRIVADO</div>
-          <div class="hero-timer" id="heroTimer">Oferta expira em 05:00</div>
+        <div class="header-row">
+          <div class="chip chip-primary">Acesso privado</div>
+          <div class="chip chip-muted" id="heroTimer">Oferta expira em 05:00</div>
         </div>
 
-        <div class="progress-wrap">
-          <div class="progress-label-row">
+        <div class="progress-block">
+          <div class="progress-head">
             <span>Progresso</span>
             <span id="progressText">0%</span>
           </div>
@@ -46,129 +44,138 @@
           </div>
         </div>
 
+        <!-- INTRO -->
         <section class="screen active" id="screenIntro">
-          <p class="overline">ÁREA RESERVADA</p>
-          <h1>Descubra qual acesso combina mais com você</h1>
-          <p class="lead">
-            Responda algumas perguntas rápidas e escolha como deseja continuar.
+          <p class="eyebrow">Área reservada</p>
+          <h1 class="title-xl">Descubra qual acesso combina com você</h1>
+          <p class="subtitle">
+            Responda algumas perguntas rápidas e siga para a opção que mais faz sentido.
           </p>
 
+          <div class="intro-mini-cards">
+            <div class="mini-card">Discreto</div>
+            <div class="mini-card">Rápido</div>
+            <div class="mini-card">Privado</div>
+          </div>
 
-          <div class="name-box">
-            <label for="userName">Como você quer ser chamado?</label>
+          <div class="form-block">
+            <label class="label" for="userName">Como você quer ser chamado?</label>
             <input
-              type="text"
               id="userName"
+              class="input"
+              type="text"
               placeholder="Digite seu nome"
               maxlength="24"
               autocomplete="name"
             />
           </div>
 
-          <button class="btn btn-primary btn-full" id="startBtn">
+          <button class="btn btn-primary btn-lg btn-full" id="startBtn">
             COMEÇAR AGORA
           </button>
 
-          <p class="mini-text">
+          <p class="helper-text">
             Ambiente exclusivo e discreto. Continue apenas se for maior de idade.
           </p>
         </section>
 
+        <!-- QUIZ -->
         <section class="screen" id="screenQuiz">
-          <div class="question-box">
-            <p class="question-step" id="questionStep">Pergunta 1 de 6</p>
-            <h2 id="questionTitle">Pergunta</h2>
-            <p class="question-subtitle" id="questionSubtitle">
+          <div class="question-card">
+            <p class="question-counter" id="questionStep">Pergunta 1 de 6</p>
+            <h2 class="title-lg" id="questionTitle">Pergunta</h2>
+            <p class="subtitle" id="questionSubtitle">
               Escolha a opção que mais combina com você.
             </p>
 
             <div class="answers" id="answersContainer"></div>
 
-            <div class="quiz-actions">
-              <button class="btn btn-secondary" id="backBtn" type="button">
-                VOLTAR
-              </button>
-            </div>
+            <button class="btn btn-secondary btn-full" id="backBtn" type="button">
+              VOLTAR
+            </button>
           </div>
         </section>
 
+        <!-- LOADING -->
         <section class="screen" id="screenLoading">
-          <div class="loading-box">
-            <div class="loader-ring"></div>
-            <p class="loading-title">Analisando seu perfil...</p>
-            <p class="loading-text">
+          <div class="loading-card">
+            <div class="loader"></div>
+            <h2 class="title-md">Analisando seu perfil...</h2>
+            <p class="subtitle">
               Estamos preparando a melhor rota de acesso para você.
             </p>
           </div>
         </section>
 
+        <!-- RESULT -->
         <section class="screen" id="screenResult">
-          <p class="overline">RESULTADO PRONTO</p>
-          <h2 id="resultTitle">Seu perfil combina com uma experiência exclusiva</h2>
-          <p class="lead" id="resultLead">
-            Agora escolha como deseja continuar.
+          <p class="eyebrow">Resultado pronto</p>
+          <h2 class="title-lg" id="resultTitle">Seu perfil está pronto</h2>
+          <p class="subtitle" id="resultLead">
+            Agora siga para a etapa liberada para você.
           </p>
 
-          <div class="result-card">
-            <h3 id="welcomeName">Olá.</h3>
-            <p>
-              Seu perfil indica interesse por uma experiência mais reservada,
-              discreta e com acesso rápido.
-            </p>
+          <div class="result-user-card">
+            <strong id="welcomeName">Olá, visitante.</strong>
+            <span id="resultDescription">
+              Seu perfil indica interesse por uma experiência mais reservada e com acesso rápido.
+            </span>
           </div>
 
-          <div class="urgency-box">
-            <div class="urgency-box__left">
-              <span class="urgency-pill">JANELA DE ACESSO</span>
-              <h3>Seu acesso preferencial está disponível agora</h3>
-              <p>
-                Escolha uma das opções abaixo antes do tempo terminar.
+          <div class="timer-card">
+            <div class="timer-card__text">
+              <span class="timer-badge">Janela de acesso</span>
+              <h3 class="title-sm">Seu acesso preferencial está disponível agora</h3>
+              <p class="timer-copy">
+                Continue antes do tempo terminar.
               </p>
             </div>
-            <div class="urgency-box__right">
-              <span class="countdown-label">Tempo restante</span>
-              <span class="countdown-time" id="resultTimer">05:00</span>
+
+            <div class="timer-card__clock">
+              <span class="timer-label">Tempo restante</span>
+              <strong class="timer-value" id="resultTimer">05:00</strong>
             </div>
           </div>
 
-          <div class="choice-grid" id="choiceGrid">
+          <div class="single-choice-wrap">
             <article class="choice-card" id="freeChoiceCard">
-              <span class="choice-tag">GRÁTIS</span>
-              <h3>Ver prévias no Telegram</h3>
-              <p>
-                Entre na área de prévias e conheça uma amostra do conteúdo
-                disponível.
+              <span class="choice-badge">GRÁTIS</span>
+              <h3 class="title-sm">Ver prévias no Telegram</h3>
+              <p class="choice-text">
+                Entre na área de prévias e conheça uma amostra antes de decidir pelo acesso completo.
               </p>
               <button class="btn btn-secondary btn-full" id="chooseFreeBtn">
                 QUERO VER PRÉVIAS
               </button>
             </article>
-          
-            <article class="choice-card choice-card--highlight" id="paidChoiceCard">
-              <span class="choice-tag">PAGO</span>
-              <h3>Liberar acesso completo</h3>
-              <p>
-                Continue para o ambiente de pagamento e desbloqueie o acesso
-                completo.
+
+            <article class="choice-card choice-card-highlight" id="paidChoiceCard">
+              <span class="choice-badge">PAGO</span>
+              <h3 class="title-sm">Liberar acesso completo</h3>
+              <p class="choice-text">
+                Continue para a plataforma de pagamento e desbloqueie o acesso completo.
               </p>
               <button class="btn btn-primary btn-full" id="choosePaidBtn">
                 QUERO LIBERAR ACESSO
               </button>
             </article>
           </div>
+        </section>
 
+        <!-- FREE -->
         <section class="screen" id="screenFree">
-          <p class="overline">PRÉVIAS LIBERADAS</p>
-          <h2 id="freeTitle">Tudo certo, <span id="freeUserName">visitante</span>.</h2>
-          <p class="lead">
+          <p class="eyebrow">Prévias liberadas</p>
+          <h2 class="title-lg">
+            Tudo certo, <span id="freeUserName">visitante</span>.
+          </h2>
+          <p class="subtitle">
             Toque no botão abaixo para entrar nas prévias gratuitas.
           </p>
 
           <div class="action-card">
-            <h3>Canal de prévias</h3>
-            <p>
-              Acesse agora o Telegram e veja uma amostra antes de decidir pelo
-              acesso completo.
+            <h3 class="title-sm">Canal de prévias</h3>
+            <p class="choice-text">
+              Acesse agora o Telegram e veja uma amostra antes de decidir pelo acesso completo.
             </p>
             <a
               class="btn btn-primary btn-full"
@@ -185,18 +192,20 @@
           </button>
         </section>
 
+        <!-- PAID -->
         <section class="screen" id="screenPaid">
-          <p class="overline">ACESSO COMPLETO</p>
-          <h2 id="paidTitle">Seu acesso está pronto, <span id="paidUserName">visitante</span>.</h2>
-          <p class="lead">
+          <p class="eyebrow">Acesso completo</p>
+          <h2 class="title-lg">
+            Seu acesso está pronto, <span id="paidUserName">visitante</span>.
+          </h2>
+          <p class="subtitle">
             Toque no botão abaixo para continuar para a plataforma de pagamento.
           </p>
 
-          <div class="action-card action-card--highlight">
-            <h3>Liberação do acesso</h3>
-            <p>
-              Você será direcionado para a plataforma responsável pelo
-              processamento do pagamento e pela liberação do acesso.
+          <div class="action-card action-card-highlight">
+            <h3 class="title-sm">Liberação do acesso</h3>
+            <p class="choice-text">
+              Você será direcionado para a plataforma responsável pelo processamento do pagamento.
             </p>
             <a
               class="btn btn-primary btn-full"
@@ -208,9 +217,9 @@
             </a>
           </div>
 
-          <div class="safe-note">
-            <span class="safe-note__dot"></span>
-            <span>A compra será concluída em ambiente externo e seguro.</span>
+          <div class="secure-note">
+            <span class="secure-note-dot"></span>
+            <span>Pagamento concluído em ambiente externo e seguro.</span>
           </div>
 
           <button class="btn btn-secondary btn-full" id="backToResultFromPaid">
